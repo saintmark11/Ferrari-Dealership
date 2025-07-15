@@ -1,0 +1,125 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ferrari Racing Cars</title>
+  <style>
+    body {
+      font-family: 'Helvetica Neue', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #111;
+      color: white;
+    }
+
+    header {
+      background-color: #e4002b;
+      padding: 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2em;
+    }
+
+    .car-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      padding: 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .car-card {
+      background-color: #1a1a1a;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .car-card:hover {
+      transform: scale(1.05);
+    }
+
+    .car-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .car-card h3 {
+      margin: 15px;
+      font-size: 1.2em;
+    }
+
+    .car-card p {
+      margin: 0 15px 15px;
+      font-size: 0.95em;
+      color: #ccc;
+    }
+
+    .back-link {
+      display: block;
+      text-align: center;
+      margin: 30px;
+      color: #e4002b;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .back-link:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Ferrari Racing Cars</h1>
+  </header>
+
+  <div class="car-gallery">
+    <div class="car-card">
+      <img src="SF1000.jpg" alt="SF1000">
+      <h3>Ferrari SF1000</h3>
+      <p>Formula 1 car used in the 2020 season, celebrating Ferrari's 1000th Grand Prix.</p>
+    </div>
+
+    <div class="car-card">
+      <img src="488 GT3 Evo.jpg" alt="488 GT3 Evo">
+      <h3>Ferrari 488 GT3 Evo</h3>
+      <p>A dominant GT racing car used in endurance and sprint championships worldwide.</p>
+    </div>
+
+    <div class="car-card">
+      <img src="Ferrari 499P.jpg" alt="499P Hypercar">
+      <h3>Ferrari 499P</h3>
+      <p>Ferrari's return to top-tier endurance racing with this stunning Le Mans Hypercar.</p>
+    </div>
+
+    <div class="car-card">
+      <img src="Ferrari FXX-K Evo.jpg">
+      <h3>Ferrari FXX-K Evo</h3>
+      <p>A track-only hypercar with hybrid tech, part of Ferrari’s XX experimental program.</p>
+    </div>
+
+    <div class="car-card">
+      <img src="Ferrari 312T.jpg">
+      <h3>Ferrari 312T</h3>
+      <p>Legendary Formula 1 car driven by Niki Lauda, known for its transverse gearbox.</p>
+    </div>
+
+    <div class="car-card">
+      <img src="Ferrari 333 SP.jpg">
+      <h3>Ferrari 333 SP</h3>
+      <p>Ferrari’s prototype sports car from the 1990s, built for endurance racing in the U.S.</p>
+    </div>
+  </div>
+
+  <a href="index.html" class="back-link">← Back to Home</a>
+
+</body>
+</html>

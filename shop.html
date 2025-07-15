@@ -1,0 +1,176 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ferrari Shop</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Helvetica Neue', sans-serif;
+      background-color: #111;
+      color: white;
+    }
+
+    header {
+      background-color: #e4002b;
+      padding: 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2em;
+    }
+
+    nav {
+      background-color: #000;
+      padding: 10px 50px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-left {
+      font-weight: bold;
+      font-size: 1.1em;
+    }
+
+    .nav-right a {
+      color: white;
+      text-decoration: none;
+      margin-left: 30px;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .nav-right a:hover {
+      color: #e4002b;
+    }
+
+    .section {
+      padding: 40px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .section h2 {
+      color: #e4002b;
+      margin-bottom: 20px;
+    }
+
+    .section p {
+      color: #ccc;
+      line-height: 1.6;
+    }
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.gallery img {
+  width: 330px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+
+    .button-bar {
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .button-bar button {
+      background-color: #e4002b;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      margin: 10px;
+      font-size: 1em;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .button-bar button:hover {
+      background-color: #c30024;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Welcome, Jabes Mendoza</h1>
+  </header>
+
+  <nav>
+    <div class="nav-left">Ferrari Shop</div>
+    <div class="nav-right">
+      <a href="#cars">Cars</a>
+      <a href="#apparel">Clothing</a>
+      <a href="#watches">Watches</a>
+      <a href="#accessories">Accessories</a>
+    </div>
+  </nav>
+
+  <div class="section" id="cars">
+    <h2>🚗 Buy Ferrari Cars</h2>
+    <p>Explore our exclusive lineup of Ferrari supercars. Custom orders available.</p>
+    <div class="gallery">
+      <img src="SF90 Stradale.jpg" alt="SF90 Stradale">
+      <img src="Daytona SP3.jpg" alt="Daytona SP3">
+    </div>
+  </div>
+
+  <div class="section" id="apparel">
+    <h2>👕 Ferrari Apparel</h2>
+    <p>Shop official Ferrari clothing — polos, jackets, caps, and more.</p>
+    <div class="gallery">
+      <img src="F1 POLO.jpg" alt="Ferrari Polo">
+      <img src="Ferrari Jacket.jpg" alt="Ferrari Jacket">
+    </div>
+  </div>
+
+  <div class="section" id="watches">
+    <h2>⌚ Ferrari Watches</h2>
+    <p>Discover precision-crafted Ferrari watches that blend motorsport heritage with Italian elegance.</p>
+    <div class="gallery">
+      <img src="Ferrari Watch 1.jpg" alt="Ferrari Watch 1">
+      <img src="Ferrari Watch 2.jpg" alt="Ferrari Watch 2">
+    </div>
+  </div>
+
+  <div class="section" id="accessories">
+    <h2>🧢 Accessories & Collectibles</h2>
+    <p>From keychains to scale models, complete your Ferrari lifestyle with premium accessories.</p>
+    <div class="gallery">
+      <img src="Ferrari Keychain.jpg" alt="Ferrari Keychain">
+      <img src="Mug.jpg" alt="Mug">
+    </div>
+  </div>
+
+  <div class="button-bar">
+    <button onclick="openSettings()">⚙️ Settings</button>
+    <button onclick="viewHistory()">🧾 Purchase History</button>
+    <button onclick="logout()">🚪 Log Out</button>
+  </div>
+
+  <script>
+    function openSettings() {
+      alert("Settings page coming soon!");
+    }
+
+    function viewHistory() {
+      alert("Purchase history feature under development.");
+    }
+
+    function logout() {
+      window.location.href = "index.html";
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ferrari Homepage</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      height: 100%;
+      font-family: 'Helvetica Neue', sans-serif;
+      overflow: hidden;
+    }
+
+    .slider {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+
+    .slide {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+
+    .slide.active {
+      opacity: 1;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 50px;
+      background: rgba(0, 0, 0, 0.6);
+      position: relative;
+      z-index: 1;
+    }
+
+    .navbar .logo img {
+      height: 40px;
+    }
+
+    .navbar nav {
+      display: flex;
+      gap: 30px;
+    }
+
+    .navbar nav a {
+      position: relative;
+      color: white;
+      text-decoration: none;
+      font-size: 1em;
+      font-weight: 500;
+      padding: 5px 0;
+      display: inline-block;
+      transform-origin: center;
+      will-change: transform;
+      transition: transform 0.3s ease, color 0.3s ease;
+    }
+
+    .navbar nav a::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      transform: translateX(-50%) scaleX(0);
+      transform-origin: center;
+      width: 100%;
+      height: 3px;
+      background-color: #e4002b;
+      border-radius: 2px;
+      transition: transform 0.3s ease;
+    }
+
+    .navbar nav a:hover {
+      transform: scale(1.2);
+    }
+
+    .navbar nav a:hover::after {
+      transform: translateX(-50%) scaleX(1);
+    }
+
+    #login-modal {
+      display: none;
+    }
+
+    #login-modal .modal-overlay {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 2;
+    }
+
+    #login-modal .modal-content {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      width: 300px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+      text-align: center;
+    }
+
+    #login-modal input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    #login-modal .hint {
+      font-size: 0.85em;
+      color: #555;
+      margin-bottom: 15px;
+    }
+
+    #login-modal button {
+      background-color: #e4002b;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    #login-modal a {
+      color: #e4002b;
+      font-size: 0.9em;
+      display: inline-block;
+      margin-top: 10px;
+      text-decoration: none;
+    }
+
+    #login-modal a:hover {
+      text-decoration: underline;
+    }
+
+    .login-message {
+      margin-top: 10px;
+      font-size: 0.9em;
+      color: red;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="slider">
+    <div class="slide active" style="background-image: url('ferrari.jpg');"></div>
+    <div class="slide" style="background-image: url('ferrari2.jpg');"></div>
+    <div class="slide" style="background-image: url('ferrari3.jpg');"></div>
+  </div>
+
+  <div class="navbar">
+    <div class="logo">
+      <img src="https://logoeps.com/wp-content/uploads/2013/01/ferrari-emblem-logo-vector.png" alt="Ferrari Logo">
+    </div>
+    <nav>
+      <a href="racing.html">Racing</a>
+      <a href="sports cars.html">Sports Cars</a>
+     <a href="about.html">About Us</a>
+      <a href="#" onclick="toggleLogin()">Log In</a>
+    </nav>
+  </div>
+
+  <div id="login-modal">
+    <div class="modal-overlay">
+      <div class="modal-content">
+        <h2>Log In</h2>
+        <input type="text" id="username" placeholder="Username">
+        <input type="password" id="password" placeholder="Password">
+        <p class="hint">🔐 Hint: 123AMAZ_ _ _</p>
+        <button onclick="verifyLogin()">Submit</button>
+        <div class="login-message" id="login-message"></div>
+        <a href="#" onclick="toggleLogin()">Cancel</a>
+      </div>
+    </div>
+  </div>
+
+<script>
+  let currentSlide = 0;
+  const slides = document.querySelectorAll('.slide');
+
+  setInterval(() => {
+    slides[currentSlide].classList.remove('active');
+    currentSlide = (currentSlide + 1) % slides.length;
+    slides[currentSlide].classList.add('active');
+  }, 4000);
+
+  function toggleLogin() {
+    const modal = document.getElementById('login-modal');
+    modal.style.display = modal.style.display === 'none' ? 'block' : 'none';
+    document.getElementById('login-message').textContent = '';
+  }
+
+  function verifyLogin() {
+    const username = document.getElementById('username').value.trim();
+    const password = document.getElementById('password').value.trim();
+    const message = document.getElementById('login-message');
+
+    if (username === 'Jabes Mendoza' && password === '123AMAZING') {
+      message.style.color = 'green';
+      message.textContent = 'Login successful! Redirecting...';
+      setTimeout(() => {
+        window.location.href = 'shop.html'; // Redirect to the new page
+      }, 1500);
+    } else {
+      message.style.color = 'red';
+      message.textContent = 'Invalid username or password.';
+    }
+  }
+</script>
+</body>
+</html>

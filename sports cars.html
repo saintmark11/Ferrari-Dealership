@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ferrari Sports Cars</title>
+  <style>
+    body {
+      font-family: 'Helvetica Neue', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #111;
+      color: white;
+    }
+
+    header {
+      background-color: #e4002b;
+      padding: 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2em;
+    }
+
+    .car-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      padding: 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .car-card {
+      background-color: #1a1a1a;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .car-card:hover {
+      transform: scale(1.05);
+    }
+
+    .car-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .car-card h3 {
+      margin: 15px;
+      font-size: 1.2em;
+    }
+
+    .car-card p {
+      margin: 0 15px 15px;
+      font-size: 0.95em;
+      color: #ccc;
+    }
+
+    .back-link {
+      display: block;
+      text-align: center;
+      margin: 30px;
+      color: #e4002b;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .back-link:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Most Expensive Ferrari Sports Cars</h1>
+  </header>
+
+  <div class="car-gallery">
+    <div class="car-card">
+      <img src="Ferrari SF90 Stradale.jpg">
+      <h3>Ferrari SF90 Stradale</h3>
+      <p>Price: $625,000 — Ferrari’s first plug-in hybrid supercar with 986 hp.</p>
+    </div>
+
+    <div class="car-card">
+      <img src="Ferrari 812 Superfast.jpg">
+      <h3>Ferrari 812 Superfast</h3>
+      <p>Price: $430,000 — A V12 grand tourer with blistering speed and luxury.</p>
+    </div>
+
+    <div class="car-card">
+      <img src="Ferrari Portofino M.jpg">
+      <h3>Ferrari Portofino M</h3>
+      <p>Price: $250,000 — A refined convertible GT with a twin-turbo V8 engine.</p>
+    </div>
+
+    <div class="car-card">
+      <img src="Ferrari F8 Tributo.jpg">
+      <h3>Ferrari F8 Tributo</h3>
+      <p>Price: $330,000 — A tribute to Ferrari’s V8 legacy with 710 hp.</p>
+    </div>
+
+    <div class="car-card">
+      <img src="Ferrari Daytona SP3.jpg">
+      <h3>Ferrari Daytona SP3</h3>
+      <p>Price: $2.2 million — A limited-edition Icona series masterpiece.</p>
+    </div>
+
+    <div class="car-card">
+      <img src="Ferrari Roma.jpg">
+      <h3>Ferrari Roma</h3>
+      <p>Price: $247,000 — A sleek and elegant front-engine coupe.</p>
+    </div>
+  </div>
+
+  <a href="index.html" class="back-link">← Back to Home</a>
+
+</body>
+</html>
